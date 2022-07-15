@@ -1,0 +1,99 @@
+{% extends 'Templates/Temp.html'%}
+{% block title %}Register {% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block content %}
+    <!-- <div class="vid-container">
+        <div class="inner-container">
+            <div class="box">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+                    {{form.clt_login}}
+                    {{form.clt_mdp}}
+                    <button>Login</button>
+                </form>
+                <p>You Don't Have An Account ? <span><a href="signup" style="text-decoration: none;">Sign
+                            Up</a></span>
+                </p>
+            </div>
+        </div>
+    </div> -->
+
+    <center>
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="container" style="width: 600px;margin: 10% 0% 10% 0%;">
+                   
+                     <div class="form-floating mb-3">
+                        {{ form.username }}
+                        <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+                    <label for="floatingInput">Username</label>
+                </div>
+
+                <div class="form-floating">
+                    {{ form.password1 }}
+                    <!-- <input type="password" class="form-control" id="floatingPassword" placeholder="Password"> -->
+                    <label for="floatingPassword">Password</label>
+                </div> 
+                <div class="form-floating">
+                    {{ form.password2 }}
+                    <!-- <input type="password" class="form-control" id="floatingPassword" placeholder="Password"> -->
+                    <label for="floatingPassword">Confirm Password</label>
+                </div> 
+                 
+                <div class="form-floating" style="margin-top: 2%;">
+                        <button type="submit" class="btn btn-primary mb-3">Register</button>
+        </div>
+        </form>
+        </div>
+        {% for mes in messages %}
+        <h5 style="color: red;margin-top: -8%;margin-bottom: 5%;">{{mes}}</h5>
+        {% endfor %}
+    </center>
+
+
+
+
+
+    <script>
+        // Easy way to wait for all videos to load before start playing
+
+        var promises = [];
+        function makePromise(i, video) {
+            promises[i] = new $.Deferred();
+            // This event tells us video can be played all the way through, without stopping or buffering
+            video.oncanplaythrough = function () {
+                // Resolve the promise
+                promises[i].resolve();
+            }
+        }
+        // Pause all videos and create the promise array
+        $('video').each(function (index) {
+            this.pause();
+            makePromise(index, this);
+        })
+
+        // Wait for all promises to resolve then start playing
+        $.when.apply(null, promises).done(function () {
+            $('video').each(function () {
+                this.play();
+            });
+        });
+
+    </script>
+    {% endblock %}
+</body>
+
+</html>

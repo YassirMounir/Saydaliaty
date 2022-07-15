@@ -1,0 +1,110 @@
+{% extends 'Templates/Temp.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+<body>
+
+
+    {% block content %}
+    <div id="intro-example" class="p-5 text-center bg-image"
+        style="background-image: url('{% static '/Media/aa7ce95b-mobile.jpg' %}');">
+        <div class="mask" style="background-color: rgba(53, 53, 53, 0.7);border-radius: 20px;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">Welcome To Saydaliaty</h1>
+                    <h5 class="mb-4">Where You Can Find Any Treatment At Any Time See All Products</h5>
+                    <a class="btn btn-outline-light btn-lg m-2" href="products" role="button" rel="nofollow">See All
+                        Products</a>
+                    <a class="btn btn-outline-light btn-lg m-2" href="signup" role="button">Create
+                        Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin: 10% 0.5%;">
+         <table class="table table-striped table-light">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">City</th>
+                <th scope="col">Zip</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in costumers %}
+            <tr>
+                <td>{{m.id}}</td>
+                <td>{{m.username}}</td>
+                <td>{{m.staffstatus}}</td>
+                <td>{{m.clt_login}}</td>
+                <td>{{m.clt_tel}}</td>
+                <td>{{m.clt_city}}</td>
+                <td>{{m.clt_zip}}</td>
+                <td><button type="button" class="btn btn-warning">Update</button></td>
+                <td><button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>   
+    </div>
+
+
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="margin: 20px;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static '/Media/aa7ce95b-mobile.jpg' %}" class="d-block w-100" style="height:600px;width:1423px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static '/Media/Fes-Les-pharmaciens.jpg' %}" class="d-block w-100" style="height:600px;width:1423px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static '/Media/des-medicaments.jpg' %}" class="d-block w-100" style="height:600px;width:1423px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+
+    
+
+    {{form.errors}}
+
+
+
+
+
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+{% extends 'Templates/Temp.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>>
+
+<body>
+    {% block content %}
+    <!-- <div class="container" style="margin: 5%;">
+        <div class="row">
+            {% for m in medicament %}
+            <div class="col-md-3">
+                <div class="wsk-cp-product">
+                    <div class="wsk-cp-img">
+                        <img src="{% static '/Media/images (2).jfif' %}" alt="Product" class="img-responsive" />
+                    </div>
+                    <div class="wsk-cp-text">
+                        <div class="title-product">
+                            <h3>{{m.mdc_name}}</h3>
+                        </div>
+                        <div class="description-prod">
+                            {% if m.mdc_qts > 0%}
+                            <h6 style="color: rgb(12, 83, 12);">In Stock</h6>
+                            {% else %}
+                            <p style="color: red;">Out Of Stock</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <div class="wcf-left"><span class="price">{{m.mdc_price}} MAD </span></div>
+                            <form action="home">
+                                <div class="wcf-right">
+                                    {% if m.mdc_qts > 0%}
+                                    <a href="signin">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16"
+                                            style="color: rgb(12, 83, 12);margin-bottom: 10px;">
+                                            <path fill-rule="evenodd"
+                                                d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                                        </svg>
+                                    </a>
+                                    {% else %}
+                                    <span style="cursor: pointer;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16"
+                                            style="color: red;margin-bottom: 10px;">
+                                            <path fill-rule="evenodd"
+                                                d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                                        </svg>
+                                    </span>
+                                    {% endif %}
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> -->
+
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="margin: 0px 0px 10% 0px;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static '/Media/aa7ce95b-mobile.jpg' %}" class="d-block w-100" style="height:720px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static '/Media/Fes-Les-pharmaciens.jpg' %}" class="d-block w-100" style="height:720px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static '/Media/des-medicaments.jpg' %}" class="d-block w-100" style="height:720px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+
+    <center>
+        <div class="container" style="margin-bottom: 2%;">
+            <h2 style="margin: 30px;margin-bottom: -20px;font-family:'Poppins',sans-serif;">Welcome To SaYdaliatY</h2>
+            <form action="med_search">
+                <div class="main-search" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static '/Media/low_.jpg' %}');
+            margin: 40px 60px 0px;
+            max-width: 1000px;
+            padding: 20px;
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border-radius: 10px;">
+                    <div class="search-bar" style="margin: 10px;">
+                        <div class="search">
+                            <input type="text" class="cls" placeholder=" What Are You Looking For?" id="srch"
+                                name="med_name" style="font-family: 'Poppins', sans-serif;
+                        font-weight: bold;
+                        box-shadow: rgba(71, 71, 168, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                        border-radius: 8px;
+                        width: 250px;
+                        height: 36px;">
+                        </div>
+                    </div>
+                    <div class="search-submitt" style="margin: 10px;">
+                        <button class="cl" type="submit" id="btn" style="box-shadow: rgba(71, 71, 168, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    border-radius: 8px;
+                    width: 40px;
+                    height: 36px;
+                    margin-top: 2px;"><i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"
+                                    style="margin-bottom: 2px;">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </center>
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            {% for m in medicament %}
+            <div class="card" style="width: 300px;margin: 10px;border-radius: 10px;margin-left: 20px;">
+                <img src="{% static '/Media/images (2).jfif' %}" class="card-img-top"
+                    style="width:300px;margin-left:-12px;border-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{m.mdc_name}}</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident iusto
+                        ipsam
+                        praesentium inventore iure eos vitae.</p>
+                    <h6 style="text-decoration: underline;color: blue;">{{m.mdc_price}} DH</h6>
+                    {% if m.mdc_qts > 0%}
+                    <h6 style="color: rgb(12, 83, 12);">In Stock</h6>
+                    {% else %}
+                    <p style="color: red;">Out Of Stock</p>
+                    {% endif %}
+                    <div class="wcf-right" style="margin-bottom: -35px;">
+                        {% if m.mdc_qts > 0%}
+                        <a href="signin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-bag-plus" viewBox="0 0 16 16"
+                                style="color: rgb(12, 83, 12);margin-top:-66px;margin-left:220px;">
+                                <path fill-rule="evenodd"
+                                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                            </svg>
+                        </a>
+                        {% else %}
+                        <span style="cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-bag-plus" viewBox="0 0 16 16"
+                                style="color: red;margin-top:-85px;margin-left:220px;">
+                                <path fill-rule="evenodd"
+                                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                            </svg>
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="container" style="margin-bottom:9.5%;margin-top: 2%;">
+                <center>
+                    <h5>
+                        <a href="products" style="color: red;text-decoration: none;">No Item Found
+                            With This Spesifications
+                            !!! (Click To Refrech)</a>
+                    </h5>
+                </center>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <!-- <div class="container">
+        <div class="row">
+            {% for m in costumers %}
+            <div class="card" style="width: 300px;margin: 10px;border-radius: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{m.clt_login}}</h5>
+                    <p class="card-text"></p>
+                    <h6 style="text-decoration: underline;color: blue;">Ville : {{m.clt_city}}</h6>
+                    <h6 style="text-decoration: underline;color: blue;"> Tel : {{m.clt_tel}}</h6>
+                    <h6 style="text-decoration: underline;color: blue;"> Zip : {{m.clt_zip}}</h6>
+                    {% empty %}
+                    <h5 style="text-decoration:  line-through;color: red;"> No User Found !!! </h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> -->
+
+    <script>
+        document.getElementById('btn').addEventListener('click', () => {
+            let input = document.getElementById('srch').value;
+            if (input == '') {
+                alert('Search Field Is Empty !!!')
+                window.stop()
+            }
+        })
+    </script>
+    {% endblock %}
+</body>
+
+</html>

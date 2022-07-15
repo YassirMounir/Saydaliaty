@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result</title>
+</head>
+
+<body>
+    {% extends 'Static.html' %}
+    {% block content %}
+    <!-- <center>
+        <div class="container">
+            <div class="row row-cols-auto">
+                <div class="col">
+                    <h1>{{fname}}</h1>
+                </div>
+                <div class="col">
+                    <h1>{{lname}}</h1>
+                </div>
+                <div class="col">
+                    <h1>{{username}}</h1>
+                </div>
+                <div class="col">
+                    <h1>{{city}}</h1>
+                </div>
+                <div class="col">
+                    <h1>{{prov}}</h1>
+                </div>
+                <div class="col">
+                    <h1>{{zip}}</h1>
+                </div>
+            </div>
+        </div>
+    </center> -->
+    <center>
+        <div class="row" style="padding: 60px;" >
+            {% for cl in client %}
+            <div class="col-sm-6" style="padding: 20px;"id="22">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Username : {{cl.username}}</h5>
+                        <h6 class="card-text">Real Name : {{cl.name}}</h6>
+                        <h6 class="card-text">Phone Number : {{cl.phone}}</h6>
+                        {% if cl.city == 'Bouskoura' %}
+                        <h6 class="card-text" >City : <span style="color: red;">{{cl.city}}</span></h6>
+                        {% else %}
+                        <h6 class="card-text">City : {{cl.city}}</h6>
+                        {% endif %}
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </center>
+    {% endblock %}
+</body>
+
+</html>
